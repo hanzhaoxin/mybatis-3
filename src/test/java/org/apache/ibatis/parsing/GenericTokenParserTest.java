@@ -68,6 +68,7 @@ class GenericTokenParserTest {
     assertEquals("{$$something}JamesTKirk", parser.parse("{$$something}${first_name}${initial}${last_name}"));
     assertEquals("${", parser.parse("${"));
     assertEquals("${\\}", parser.parse("${\\}"));
+    assertEquals("${first_name\\}", parser.parse("${first_name\\}"));
     assertEquals("Hiya", parser.parse("${var{with\\}brace}"));
     assertEquals("", parser.parse("${}"));
     assertEquals("}", parser.parse("}"));
